@@ -5,7 +5,7 @@
 /*
 Creates a non indexed cube, returning a cube with 36 points.
 */
-GLfloat* createNonIndexedCube(GLfloat* destinationArray, int sizex, int sizey, int sizez)
+void createNonIndexedCube(GLfloat* array, int sizex, int sizey, int sizez)
 {
 	// Locally this shouldnt impose any problems
 	using namespace glm;
@@ -49,8 +49,7 @@ GLfloat* createNonIndexedCube(GLfloat* destinationArray, int sizex, int sizey, i
 	addTriangleToVector(&data, p3, p7, p4);
 	addTriangleToVector(&data, p7, p8, p4);
 
-	// Somewhat unsafe? perhaps typecast glm::vector?
-	return (GLfloat*)&data;
+	memcpy(array, (GLfloat*)&data[0], sizeof(glm::vec3)*data.size());
 }
 
 
