@@ -5,7 +5,7 @@
 /*
 Creates a non indexed cube, returning a cube with 36 points.
 */
-void createNonIndexedCube(GLfloat* array, int sizex, int sizey, int sizez)
+void createNonIndexedCube(GLfloat* array, float sizex, float sizey, float sizez)
 {
 	// Locally this shouldnt impose any problems
 	using namespace glm;
@@ -49,7 +49,7 @@ void createNonIndexedCube(GLfloat* array, int sizex, int sizey, int sizez)
 	addTriangleToVector(&data, p3, p7, p4);
 	addTriangleToVector(&data, p7, p8, p4);
 
-	memcpy(array, (GLfloat*)&data[0], sizeof(glm::vec3)*data.size());
+	memcpy(array, (GLfloat*)&data[0], sizeof(data[0])*data.size());
 }
 
 
@@ -60,5 +60,5 @@ void addTriangleToVector(std::vector<glm::vec3>* vec, glm::vec3 p1, glm::vec3 p2
 {
 	vec->push_back(p1);
 	vec->push_back(p2);
-	vec->push_back(p1);
+	vec->push_back(p3);
 }
