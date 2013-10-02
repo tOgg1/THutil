@@ -83,8 +83,8 @@ void createNonIndexedCube(GLfloat* array, float sizex, float sizey, float sizez)
 	addVec3TripletToVector(&data, p2, p1, p5);
 
 	//Bottom face
-	addVec3TripletToVector(&data, p3, p7, p4);
-	addVec3TripletToVector(&data, p7, p8, p4);
+	addVec3TripletToVector(&data, p3, p4, p7);
+	addVec3TripletToVector(&data, p4, p8, p7);
 
 	memcpy(array, (GLfloat*)&data[0], sizeof(data[0])*data.size());
 }
