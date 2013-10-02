@@ -13,6 +13,10 @@
 
 void createNonIndexedCube(GLfloat*, float sizex, float sizey, float sizez);
 void createFaceColorsForNonIndexedCube(GLfloat* array, glm::vec4 colorFront, glm::vec4 colorBack,	glm::vec4 colorRight, glm::vec4 colorLeft, glm::vec4 colorTop, glm::vec4 colorBottom);
+void createIndexedCube(GLfloat* array, float sizex, float sizey, float sizez);
+void createColorsForIndexedCube(GLfloat* array,	glm::vec4 colorFront, glm::vec4 colorBack, glm::vec4 colorRight, glm::vec4 colorLeft, glm::vec4 colorTop,	glm::vec4 colorBottom);
+
+
 
 //Helper methods
 void addVec3TripletToVector(std::vector<glm::vec3>* vec, glm::vec3 p1, glm::vec3 p2, glm::vec3 p3);
