@@ -131,7 +131,7 @@ void createFaceColorsForNonIndexedCube(
 	memcpy(array, (GLfloat*)&data[0], sizeof(data[0])*data.size());
 }
 
-void createIndexedCube(GLfloat* vertexArray, GLint* indexArray, float sizex, float sizey, float sizez)
+void createIndexedCube(GLfloat* vertexArray, GLfloat* normalArray, GLint* indexArray, float sizex, float sizey, float sizez, bool createNormalVectors)
 {
 
 
@@ -140,15 +140,12 @@ void createIndexedCube(GLfloat* vertexArray, GLint* indexArray, float sizex, flo
 void createColorsForIndexedCube
 	(
 	GLfloat* colorArray,
-	GLfloat* normalArray,
-	GLint &indexArray,	
 	glm::vec4 colorFront,
 	glm::vec4 colorBack,
 	glm::vec4 colorRight,
 	glm::vec4 colorLeft,
 	glm::vec4 colorTop,
-	glm::vec4 colorBottom,
-	bool createNormalVectors
+	glm::vec4 colorBottom
 )
 {
 
